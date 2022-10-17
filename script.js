@@ -1,10 +1,13 @@
 let myForm=document.getElementById('signup');
 console.log('myForm',myForm);
 console.log(myForm.elements);
-console.log(myForm.elements['uname'].value);
+//console.log(myForm.elements['uname'].value);
 let uname;
 let pwrd;
 let emailid;
+let gender;
+let subjects;
+let selectedsubjects=[];
 const NAME_REQUIRED=' Please Enter User Name';
 const EMAIL_REQUIRED=' Please Enter Email ID';
 const VALID_EMAIL_MESSAGE='Enter Valid Email ID';
@@ -14,6 +17,7 @@ myForm.addEventListener('submit',(event)=>
 {
 	
 	event.preventDefault();
+	
 	uname=myForm.elements['uname'];
 	emailid=myForm.elements['emailid'];
 	console.log(uname,emailid);
@@ -21,10 +25,28 @@ myForm.addEventListener('submit',(event)=>
 	var isNameValid=hasValue(uname,NAME_REQUIRED);
 	var isEmailValid=hasValue(emailid,EMAIL_REQUIRED)&&isValidEmail(emailid,VALID_EMAIL_MESSAGE);
 	console.log(isNameValid,isEmailValid);
+	gender=myForm.elements['group1'];
+	console.log("gender",gender);
+	subjects=myForm.querySelectorAll("input[type='checkbox']");
+	//subjects=myForm.elements['group2'];
+	console.log("subjects ",subjects);
+	subjects.forEach((subject)=>
+	{
+		console.log("sub",subject.checked);
+		if(subject.checked)
+			selectedsubjects.push(subject);
+	});
+	
+	
 	if(isNameValid&&isEmailValid)
 		myForm.submit();
 	
 });
+document.querySelector('input').addEventListener('input',(event)=>
+{
+	console.log('input',event.currentTarget.value);
+	
+})
 
 function hasValue(input,msg)
 {

@@ -1,30 +1,53 @@
 <html>
+
 <head>
 
-<link rel="stylesheet" href="styles.css"/>
+	<link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-<div class="container">
-<form id="signup" action="/signup" method="post" novalidate>
-		<div class="field">
-		<h1>Sign up form</h1>
-		</div>
-		<div class="field">
-			<label for="name">Name:</label>
-			<input type="text" id="uname" placeholder="Please Enter your name" required>
-			<small></small>
-		</div>
-		<div class="field">
-			<label for="email">Email:</label>
-			<input type="text" id="emailid" placeholder="Please Enter email" required>
-			<small></small>
-		</div>
-		<div class="field">
-			<button>Cancel</button>
-			<button type="submit">Subscribe</button>
-		</div>
-</form>
+	<div class="container">
+		<form id="signup" action="/signup" method="post" novalidate>
+			<div class="field">
+				<h1>Sign up form</h1>
+			</div>
+			<div class="field">
+				<label for="name">Name:</label>
+				<input type="text" id="uname" placeholder="Please Enter your name" required>
+				<small></small>
+			</div>
+			<div class="field">
+				<label for="email">Email:</label>
+				<input type="text" id="emailid" placeholder="Please Enter email" required>
+				<small></small>
+			</div>
+			<div class="field">
+				<label for="Gender">Gender: </label>
+				<div class="gender" id="group1">
+					<input type="radio" name="group1" value="Male">Male</input>
+					<input type="radio" name="group1" value="Female">Female</input>
+				</div>
+				<small></small>
+			</div>
+			<div class="field">
+				<label for="subject">Subject: </label>
+				<div class="subject" id="group2">
+					<input type="checkbox" value="Physics" name="group2">Physics</input>
+					<input type="checkbox" value="Chemistry" name="group2">chemistry</input>
+					<input type="checkbox" value="Maths" name="group2">Maths</input>
+				</div>
+				<small></small>
+			</div>
+			<div class="field">
+				<button>Cancel</button>
+				<button type="submit">Subscribe</button>
+			</div>
+
+	</form>
+	</div>
+	
 	<script src="script.js"></script>
-</div>
+	</div>
 </body>
+
 </html>
